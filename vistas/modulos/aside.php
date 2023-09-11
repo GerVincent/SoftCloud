@@ -25,27 +25,54 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Productos
+                            Catálogos
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/productos.php','content-wrapper')">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Productos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/productos.php','content-wrapper')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Productos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/paquetes.php','content-wrapper')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Combos-Kits</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/precios.php','content-wrapper')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Precios</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/precios.php','content-wrapper')">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inventario</p>
+                                Clientes
                             </a>
                         </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/carga_masiva_productos.php','content-wrapper')">
+                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/precios.php','content-wrapper')">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Carga Masiva</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/categorias.php','content-wrapper')">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Categorias</p>
+                                Vendedores
                             </a>
                         </li>
                     </ul>
@@ -89,7 +116,7 @@
 </aside>
 
 <script>
-    $(".nav-link").on('click',function(){
+    $(".nav-link").on('click', function() {
         $(".nav-link").removeClass('active');;
         $(this).addClass('active');
     })

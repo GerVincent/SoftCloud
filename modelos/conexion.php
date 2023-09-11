@@ -1,17 +1,40 @@
 <?php
+class Conexion
+{
+    static public function conectar()
+    {
 
-class Conexion{
+        // $SqlServer = "LAPTOP\SQLEXPRESS";
+        // $DbConnInfo = array( "Database"=>"SOFT00003", "UID"=>"sa", "PWD"=>"M1cr0s0ft");
+        // $SqlServerCon = sqlsrv_connect( $SqlServer, $DbConnInfo);
+        // if( $SqlServerCon ) {echo "Connection established";}
+        // else
+        // {echo "Connection could not be established.<br />";
+        // die( print_r( sqlsrv_errors(), true));}
 
-    static public function conectar(){
+        // $conn = new PDO("mysql:host=localhost;dbname=softcloud","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));        
+        // $conn = new PDO("sqlsrv:Server=LAPTOP\SQLEXPRESS;Database=SOFT00003", "sa", "M1cr0s0ft");                    
+
+        $sqlsrvlocal = '';
+        // $sqlsrvlocal = '\SQLEXPRESS';
+        // $sqlsrvlocal = '\MSSQLSERVER22';
+        $servidor = 'ingsur.cwiu11cn0iql.us-east-1.rds.amazonaws.com';
+        $ubicacion = 'amazonaws';        
+        $basedatos = 'SOFT00003';
+        $password = 'M1cr0s0ft';
+
         try {
-            $conn = new PDO("sqlsrv:Server=ingsur.cwiu11cn0iql.us-east-1.rds.amazonaws.com;Database=SOFT00003", "admin", "M1cr0s0ft");
-            // $conn = new PDO("sqlsrv:Server=localhost;Database=SOFT00003", "sa", "M1cr0s0ft");            
-            // $conn = new PDO("mysql:host=localhost;dbname=softcloud","root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));            
-            return $conn;
-        }
-        catch (PDOException $e) {
-            echo 'Falló la conexión: ' . $e->getMessage();
-        }
+            if (str_contains($servidor, $ubicacion) && strlen($sqlsrvlocal) == 0) {
+                $user = 'admin';
+            } else {
+                $servidor = getHostByName(getHostName());
+                $user = 'sa';
+            };
 
+            $conn = new PDO("sqlsrv:Server=" . $servidor . ";Database=" . $basedatos, $user, $password);
+            return $conn;
+        } catch (PDOException $e) {
+            echo 'Falló la conexión 1: ' . $e->getMessage();
+        }
     }
 }

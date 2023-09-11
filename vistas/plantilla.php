@@ -33,7 +33,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="vistas/assets/plugins/summernote/summernote-bs4.min.css">
 
     <link rel="stylesheet" href="vistas/assets/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="vistas/assets/dist/css/plantilla.css">    
+    <link rel="stylesheet" href="vistas/assets/dist/css/plantilla.css">
+    <!-- ============================================================
+    =ESTILOS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css">
     <!-- ============================================================================================================= -->
     <!-- REQUIRED SCRIPTS -->
     <!-- ============================================================================================================= -->
@@ -49,6 +55,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="vistas/assets/dist/js/adminlte.min.js"></script>
+    <!-- ============================================================
+    =LIBRERIAS PARA USO DE DATATABLES JS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>        
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <!-- ============================================================
+    =LIBRERIAS PARA EXPORTAR A ARCHIVOS
+    ===============================================================-->
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">

@@ -162,9 +162,9 @@
                                     <thead>
                                         <tr class="text-danger">
                                             <th>Cod.</th>
-                                            <th>Descripción del Producto</th>
+                                            <th>Nombre Producto</th>
                                             <th style="text-align:center">Cantidad</th>
-                                            <th style="text-align:right">Tot. Neto</th>
+                                            <th style="text-align:center">TOT_Venta</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -199,8 +199,8 @@
                                         <tr class="text-danger">
                                             <th>Cod.</th>
                                             <th>Cliente</th>
-                                            <th>TOT.Contado</th>
-                                            <th>TOT.Crédito</th>
+                                            <th>TOT_Contado</th>
+                                            <th>TOT_Crédito</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -225,10 +225,10 @@
             method: 'POST',
             dataType: 'json',
             success: function(respuesta) {
-                // console.log("respuesta Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
-                // console.log("respuesta", respuesta[0]['totalCtasCobrar']);
-                // console.log("respuesta", respuesta[0]['totalInventario']);
-                // console.log("respuesta", respuesta[0]['totalCancelados']);                
+                // console.log("Tarjeta Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
+                // console.log("Tarjeta Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
+                // console.log("Tarjeta Total Inventario", respuesta[0]['totalInventario']);
+                // console.log("Tarjeta Total Cancelados", respuesta[0]['totalCancelados']);                
                 $("#totalVentas").html('S./ ' + formatoMexico2(respuesta[0]['totalVentas']))
                 $("#totalCtasCobrar").html('S./ ' + formatoMexico2(respuesta[0]['totalCtasCobrar']))
                 $("#totalInventario").html('S./ ' + formatoMexico2(respuesta[0]['totalInventario']))
@@ -248,6 +248,11 @@
             method: 'POST',
             dataType: 'json',
             success: function(respuesta) {
+                console.log("intervalo Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
+                console.log("intervalo Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
+                console.log("intervalo Total Inventario", respuesta[0]['totalInventario']);
+                console.log("intervalo Total Cancelados", respuesta[0]['totalCancelados']);                
+
                 $("#totalVentas").html('S./ ' + formatoMexico2(respuesta[0]['totalVentas']))
                 $("#totalCtasCobrar").html('S./ ' + formatoMexico2(respuesta[0]['totalCtasCobrar']))
                 $("#totalInventario").html('S./ ' + formatoMexico2(respuesta[0]['totalInventario']))
