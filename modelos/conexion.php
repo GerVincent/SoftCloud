@@ -17,7 +17,7 @@ class Conexion
 
         $sqlsrvlocal = '';
         // $sqlsrvlocal = '\SQLEXPRESS';
-        // $sqlsrvlocal = '\MSSQLSERVER22';
+        $sqlsrvlocal = '\MSSQLSERVER22';
         $servidor = 'ingsur.cwiu11cn0iql.us-east-1.rds.amazonaws.com';
         $ubicacion = 'amazonaws';        
         $basedatos = 'SOFT00003';

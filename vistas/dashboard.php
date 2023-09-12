@@ -248,10 +248,10 @@
             method: 'POST',
             dataType: 'json',
             success: function(respuesta) {
-                console.log("intervalo Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
-                console.log("intervalo Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
-                console.log("intervalo Total Inventario", respuesta[0]['totalInventario']);
-                console.log("intervalo Total Cancelados", respuesta[0]['totalCancelados']);                
+                // console.log("intervalo Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
+                // console.log("intervalo Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
+                // console.log("intervalo Total Inventario", respuesta[0]['totalInventario']);
+                // console.log("intervalo Total Cancelados", respuesta[0]['totalCancelados']);                
 
                 $("#totalVentas").html('S./ ' + formatoMexico2(respuesta[0]['totalVentas']))
                 $("#totalCtasCobrar").html('S./ ' + formatoMexico2(respuesta[0]['totalCtasCobrar']))
@@ -271,7 +271,7 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            console.log("respuesta", respuesta);
+            // console.log("respuesta", respuesta);
 
             var fecha_venta = [];
             var total_venta = [];
@@ -290,7 +290,7 @@
             total_ventas_mes = total_ventas_mes.toFixed(2)
             total_venta.push(0);
 
-            console.log("respuesta GRAFICO", total_ventas_mes);
+            // console.log("respuesta GRAFICO", total_ventas_mes);
 
             $("#title-header").html('Ventas del Mes: S./  ' + formatoMexico2(total_ventas_mes));
 
@@ -386,7 +386,7 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            console.log("respuesta Productos mas vendidos", respuesta);
+            // console.log("respuesta Productos mas vendidos", respuesta);
 
             for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
@@ -395,7 +395,7 @@
                     '<td align="center">' + formatoMexico2(respuesta[i]["cantidad"]) + '</td>' +
                     '<td align="right"> S./ ' + formatoMexico2(respuesta[i]["total_venta"]) + '</td>' +
                     '</tr>'
-                console.log("respuesta Filas", filas);
+                // console.log("respuesta Filas", filas);
                 $("#tbl_productos_mas_vendidos tbody").append(filas);
             }
         }

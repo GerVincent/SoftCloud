@@ -3,9 +3,34 @@
     background:#007bff !important;
     font-weight: bold !important;
 }
-
 .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
     color: white !important;
     background:#007bff !important;
     font-weight: bold !important;
+}
+table.dataTable tbody td {
+    white-space: nowrap !important;
+    font-size: 15px !important    
+}
+#tbl_productos thead th{
+    white-space: nowrap !important;
+}
+/* button.dt-button, div.dt-button, a.dt-button, input.dt-button { */
+    /* background: red !important; */
+/* } */
+.addNewRecord{
+    background-color: #198754 !important;
+    color: white !important;
+}
+.buttons-excel{
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+.buttons-print{
+    background-color: #ffc107 !important;
+    color: white !important;
+}
+.dt-button{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
