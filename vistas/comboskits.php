@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Catálogos / Productos</h1>
+                <h1 class="m-0">Catálogos / Combos-Kits</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Catálogos / Productos</li>
+                    <li class="breadcrumb-item active">Catálogos / Combos-Kits</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,7 +43,7 @@
                                 <div style="width: 20%;" class="form-floating mx-1">
                                     <!-- placeholder="Código Padre..."                             -->
                                     <input type="text" id="iptCodigoPadre" class="form-control" placeholder="Código Padre..." data-index="2">
-                                    <label for="iptCodigoPadre">Código Padre</label>
+                                    <label for="iptCodigoPadre">Código Combo-Kit</label>
                                 </div>
                                 <div style="width: 20%;" class="form-floating mx-1">
                                     <input type="text" id="iptClasificador1" class="form-control" placeholder="Clasificador 1..." data-index="3">
@@ -72,7 +72,7 @@
         /*===============================================================*/ -->
         <div class="row">
             <div class="col-lg-12">
-                <Table id="tbl_productos" class="table table-striped w-100 shadow">
+                <Table id="tbl_combo-kit" class="table table-striped w-100 shadow">
                     <thead class="bg-info">
                         <tr>
                             <th></th>
@@ -104,7 +104,7 @@
         <div class="modal-content">
             <!-- Cabecera del Modal -->
             <div class="modal-header bg-gray py-1 aling-items-center">
-                <h5 class="modal-title" id="ModalTitulo">Agregar Producto</h5>
+                <h5 class="modal-title" id="ModalTitulo">Agregar Combo-Kit</h5>
                 <button type="button" class="btn btn-outline-primary text-white border-0 fs-5" data-bs-dismiss="modal" id="btnCerrarModal">
                     <i class="far fa-times-circle"></i>
                 </button>
@@ -119,11 +119,11 @@
                         <div class="col-lg-4">
                         <div class="form-group mb-2">
                             <label class="" for="ipCodigoProd"><i class="fas fa-barcode fs-6"></i>
-                                <span class="small">Código de Producto</span><span class="text-danger">*</span>
+                                <span class="small">Código de Combo-Kit</span><span class="text-danger">*</span>
                             </label>
                             <input type="text" class="form-control form-control-sm" id="ipCodigoProd" 
                                 name="ipCodigoProd" placeholder="Código de Producto" required>
-                                <div class="invalid-feedback">Ingrese el código de producto</div>
+                                <div class="invalid-feedback">Ingrese el código de Combo-Kit</div>
                         </div>
                         </div>
                         <!-- Columna para el registro del Tipo de Producto CLASE DE PRODUCTO-->
@@ -307,7 +307,7 @@
         /*==============================================================*/
        // CARGA DEL LISTADO DE PRODUCTOS CON PLUGING DATA TABLES JS
        /*===============================================================*/
-        table = $("#tbl_productos").DataTable({
+        table = $("#tbl_combo-kit").DataTable({
             dom: 'Bfrtip',
             buttons: [{
                     text: 'Agregar Producto',
@@ -614,7 +614,7 @@
         /*===============================================================*/
       // EVENTO AL DAR CLICK BOTON EDIT PRODUCTO
       /*===============================================================*/
-       $('#tbl_productos tbody').on('click','.btnEditarProducto',function(){
+       $('#tbl_combo-kit tbody').on('click','.btnEditarProducto',function(){
             $("#mdlGestionarProducto").modal('show');
             $("#ModalTitulo").html('Actualizar Producto')            
             var options;
@@ -795,7 +795,7 @@
         /*===============================================================*/
       // EVENTO AL DAR CLICK BOTON ELIMINAR PRODUCTO
       /*===============================================================*/
-        $('#tbl_productos tbody').on('click','.btnEliminarProducto',function(){
+        $('#tbl_combo-kit tbody').on('click','.btnEliminarProducto',function(){
             accion = 5; // Setear para accion de bloquear producto
             var data = table.row($(this).parents('tr')).data();
             var PROD_Cod = data[1];

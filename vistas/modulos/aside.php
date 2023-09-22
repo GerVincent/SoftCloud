@@ -1,4 +1,5 @@
 <!-- Main Sidebar Container -->
+<font size="2">
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -46,7 +47,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/paquetes.php','content-wrapper')">
+                                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/comboskits.php','content-wrapper')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Combos-Kits</p>
                                     </a>
@@ -114,6 +115,7 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+</font>
 
 <script>
     $(".nav-link").on('click', function() {

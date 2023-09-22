@@ -2,19 +2,47 @@
     color: white !important;
     background:#007bff !important;
     font-weight: bold !important;
+    white-space: nowrap !important;    
 }
 .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
     color: white !important;
     background:#007bff !important;
     font-weight: bold !important;
+    font-size: 11px  !important    
+}
+.text-danger{
+    color:  #17A2B8 !important;    
 }
 table.dataTable tbody td {
     white-space: nowrap !important;
-    font-size: 15px !important    
+    font-size: 11px  !important
+}
+.table:not(.table-dark){
+    white-space: nowrap !important;
+    font-size: 12px  !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.5) !important;
+    white-space: nowrap !important;
+}
+.table thead th{
+    font-size: small !important;
+    white-space: nowrap !important;
 }
 #tbl_productos thead th{
     white-space: nowrap !important;
+    font-size: 11px  !important    
 }
+table.dataTable {
+    font-size: 15px !important;
+}
+.content-header h1{
+    font-size: large !important;
+}
+.card-title {
+    font-size: medium !important;
+}
+
 /* button.dt-button, div.dt-button, a.dt-button, input.dt-button { */
     /* background: red !important; */
 /* } */

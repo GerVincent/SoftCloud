@@ -79,14 +79,13 @@
                     <a style="cursor:pointer;" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- TARJETA PRODUCTOS MINIMO STOCK -->
+            <!-- TARJETA TOTAL 10 PRODUCTOS MAS VENDIDOS -->
             <div class="col-lg-2">
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
-                        <h4 id="totalProductosMinStock">11</h4>
-
-                        <p>Productos Poco Stock</p>
+                        <h4 id="totalTop10Productos">S/. 0.00</h4>
+                        <p>Tot. 10 Prod. Vendidos</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-remove-circle"></i>
@@ -94,14 +93,14 @@
                     <a style="cursor:pointer;" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- TARJETA TOTAL VENTAS DIA -->
+            <!-- TARJETA TOTAL 10 CLIENTES CON MAYOR COMPRA -->
             <div class="col-lg-2">
                 <!-- small box -->
                 <div class="small-box bg-secondary">
                     <div class="inner">
-                        <h4 id="totalVentasHoy">S/. 11,959</h4>
+                        <h4 id="totalTop10Clientes">S/. 0.00</h4>
 
-                        <p>Ventas Del Día</p>
+                        <p>Total Top 10 Clientes</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-calendar"></i>
@@ -118,6 +117,8 @@
                     <div class="card-header">
                         <!-- <h3 class="card-title" id="title-header"></h3> -->
                         <h3 class="card-title" id="title-header">Ventas del mes</h3>
+                        <h3 class="card-title" id="title-headercontado">Ventas Contado</h3>
+                        <h3 class="card-title" id="title-headercredito">Ventas Credito</h3>                        
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 <i class="fas fa-minus"></i>
@@ -140,7 +141,6 @@
 
         <!-- FILA RANKING PRODUCTOS Y CLIENTES -->
         <div class="row">
-
             <!-- COLUMNA RANKING PRODUCTOS -->
             <div class="col-lg-6">
                 <div class="card card-info">
@@ -158,13 +158,13 @@
                     <div class="card-body">
                         <div class="table-responsive" style="font-size:20px">
                             <font size="2">
-                                <table class="table" id="tbl_productos_mas_vendidos">
+                                <table style="width:100%" border="1" class="table" id="tbl_productos_mas_vendidos">
                                     <thead>
                                         <tr class="text-danger">
                                             <th>Cod.</th>
                                             <th>Nombre Producto</th>
                                             <th style="text-align:center">Cantidad</th>
-                                            <th style="text-align:center">TOT_Venta</th>
+                                            <th style="text-align: right">Tot. Venta</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -194,13 +194,13 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <font size="2">
-                                <table class="table" id="tbl_clientes_mayor_compra">
+                                <table style="width:100%" border="1" class="table" id="tbl_clientes_mayor_compra">
                                     <thead>
                                         <tr class="text-danger">
                                             <th>Cod.</th>
                                             <th>Cliente</th>
-                                            <th>TOT_Contado</th>
-                                            <th>TOT_Crédito</th>
+                                            <th style="text-align: right">Tot. Contado</th>
+                                            <th style="text-align: right">Tot. Crédito</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -212,6 +212,77 @@
             </div>
         </div>
 
+        <!-- FILA RANKING ZONAS Y VENDEDORES -->
+        <div class="row">
+            <!-- COLUMNA RANKING ZONAS -->
+            <div class="col-lg-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h5 class="card-title">Las 10 zonas más vendidas en el mes</h5>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div> <!-- ./ end card-tools -->
+                    </div> <!-- ./ end card-header -->
+                    <div class="card-body">
+                        <div class="table-responsive" style="font-size:20px">
+                            <font size="2">
+                                <table style="width:100%" border="1" class="table" id="tbl_zonas_mas_vendidas">
+                                    <thead>
+                                        <tr class="text-danger">
+                                            <th>Provincia</th>
+                                            <th>Distrito</th>
+                                            <th style="text-align:right">Tot. Venta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                        </div>
+                        </font>
+                    </div> <!-- ./ end card-body -->
+                </div>
+            </div>
+
+            <!-- COLUMNA RANKING VENDEDORES -->
+            <!-- <div class="col-lg-6"> -->
+                <!-- <div class="card card-info"> -->
+                    <!-- <div class="card-header"> -->
+                        <!-- <h5 class="card-title">Los 10 Vendedores con mayor venta del mes</h5> -->
+                        <!-- <div class="card-tools"> -->
+                            <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"> -->
+                                <!-- <i class="fas fa-minus"></i> -->
+                            <!-- </button> -->
+                            <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"> -->
+                                <!-- <i class="fas fa-times"></i> -->
+                            <!-- </button> -->
+                        <!-- </div> ./ end card-tools -->
+                    <!-- </div> ./ end card-header -->
+                    <!-- <div class="card-body"> -->
+                        <!-- <div class="table-responsive"> -->
+                            <!-- <font size="2"> -->
+                                <!-- <table class="table" id="tbl_clientes_mayor_compra"> -->
+                                    <!-- <thead> -->
+                                        <!-- <tr class="text-danger"> -->
+                                            <!-- <th>Cod.</th> -->
+                                            <!-- <th>Cliente</th> -->
+                                            <!-- <th>Tot. Contado</th> -->
+                                            <!-- <th>Tot. Crédito</th> -->
+                                        <!-- </tr> -->
+                                    <!-- </thead> -->
+                                    <!-- <tbody></tbody> -->
+                                <!-- </table> -->
+                        <!-- </div> -->
+                        <!-- </font> -->
+                    <!-- </div> ./ end card-body -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div>         -->
+
     </div><!-- /.container-fluid -->
 </div> <!-- /.content -->
 
@@ -219,20 +290,25 @@
 <!-- SOLICITUD AJAX TARJETAS INFORMATIVAS -->
 <!-- ======================================================= -->
 <script>
+
+    var totalTopProducto = 0;
+    var totalTopCliente = 0;
+    var totalTopZonas = 0;
+    var totalTopContado = 0;
+    var totalTopCredito = 0;
+
     $(document).ready(function() {
         $.ajax({
             url: "ajax/dashboard.ajax.php",
             method: 'POST',
             dataType: 'json',
             success: function(respuesta) {
-                // console.log("Tarjeta Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
-                // console.log("Tarjeta Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
-                // console.log("Tarjeta Total Inventario", respuesta[0]['totalInventario']);
-                // console.log("Tarjeta Total Cancelados", respuesta[0]['totalCancelados']);                
                 $("#totalVentas").html('S./ ' + formatoMexico2(respuesta[0]['totalVentas']))
                 $("#totalCtasCobrar").html('S./ ' + formatoMexico2(respuesta[0]['totalCtasCobrar']))
                 $("#totalInventario").html('S./ ' + formatoMexico2(respuesta[0]['totalInventario']))
                 $("#totalCancelados").html('S./ ' + formatoMexico2(respuesta[0]['totalCancelados']))
+                $("#totalTop10Productos").html('S./ ' + formatoMexico2(totalTopProducto))
+                $("#totalTop10Clientes").html('S./ ' + formatoMexico2(totalTopCliente))                
             }
         });
     })
@@ -248,15 +324,12 @@
             method: 'POST',
             dataType: 'json',
             success: function(respuesta) {
-                // console.log("intervalo Total Ventas",formatoMexico2(respuesta[0]['totalVentas']));
-                // console.log("intervalo Total CtasCobrar", respuesta[0]['totalCtasCobrar']);
-                // console.log("intervalo Total Inventario", respuesta[0]['totalInventario']);
-                // console.log("intervalo Total Cancelados", respuesta[0]['totalCancelados']);                
-
                 $("#totalVentas").html('S./ ' + formatoMexico2(respuesta[0]['totalVentas']))
                 $("#totalCtasCobrar").html('S./ ' + formatoMexico2(respuesta[0]['totalCtasCobrar']))
                 $("#totalInventario").html('S./ ' + formatoMexico2(respuesta[0]['totalInventario']))
                 $("#totalCancelados").html('S./ ' + formatoMexico2(respuesta[0]['totalCancelados']))
+                $("#totalTop10Productos").html('S./ ' + formatoMexico2(totalTopProducto))
+                $("#totalTop10Clientes").html('S./ ' + formatoMexico2(totalTopCliente))
             }
         });
     }, 10000);
@@ -271,39 +344,33 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            // console.log("respuesta", respuesta);
-
             var fecha_venta = [];
             var total_venta = [];
             var total_venta_ant = [];
-
             var total_ventas_mes = 0;
+            var total_ventas_contado = 0;
+            var total_ventas_credito = 0;
 
             for (let i = 0; i < respuesta.length; i++) {
-
                 fecha_venta.push(respuesta[i]['fecha_venta']);
                 total_venta.push(respuesta[i]['total_venta']);
                 total_venta_ant.push(respuesta[i]['total_venta_ant']);
                 total_ventas_mes = parseFloat(total_ventas_mes) + parseFloat(respuesta[i]['total_venta']);
-
+                total_ventas_contado = parseFloat(total_ventas_contado) + parseFloat(respuesta[i]['total_contado']);
+                total_ventas_credito = parseFloat(total_ventas_credito) + parseFloat(respuesta[i]['total_credito']);
             }
             total_ventas_mes = total_ventas_mes.toFixed(2)
             total_venta.push(0);
 
-            // console.log("respuesta GRAFICO", total_ventas_mes);
-
-            $("#title-header").html('Ventas del Mes: S./  ' + formatoMexico2(total_ventas_mes));
+           $("#title-header").html('Ventas del Mes: S./  ' + formatoMexico2(total_ventas_mes));
+           $("#title-headercontado").html('________________Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));           
+           $("#title-headercontado").html('________________Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));
+           $("#title-headercredito").html('________________Ventas Credito: S./  ' + formatoMexico2(total_ventas_credito));
 
             var barChartCanvas = $("#barChart").get(0).getContext('2d');
-
             var areaChartData = {
                 labels: fecha_venta,
                 datasets: [
-                    // {
-                    // label: 'Ventas del Anterior',
-                    // backgroundColor: 'rgb(255, 140, 0,0.9)',
-                    // data: total_venta_ant
-                    // },
                     {
                         label: 'VENTAS DEL MES EN SOLES',
                         backgroundColor: 'rgba(60,141,188,0.9)',
@@ -313,11 +380,8 @@
             }
 
             var barChartData = $.extend(true, {}, areaChartData);
-
             var temp0 = areaChartData.datasets[0];
-
             barChartData.datasets[0] = temp0;
-
             var barChartOptions = {
                 maintainAspectRatio: false,
                 responsive: true,
@@ -350,9 +414,6 @@
                                     scale_max = dataset._meta[Object.keys(dataset
                                         ._meta)[0]].data[i]._yScale.maxHeight;
                                 var y_pos = model.y + 13;
-                                // Asegúrese de que el valor de los datos no se desborde ni se oculte
-                                // cuando el valor de la barra esté demasiado cerca del valor máximo de la escala. 
-                                // Nota: El valor y es inverso, cuenta de arriba hacia abajo                                
                                 if ((scale_max - model.y) / scale_max >= 0.175) {
                                     ctx.fillStyle = 'white';
                                     y_pos = model.y + 20;
@@ -376,8 +437,8 @@
         }
     });
     // =======================================================
-    // SOLICITUD RANKING DE PRODCUTOS MAS VENDIDOS DEL MES
-    // =======================================================      
+    // SOLICITUD RANKING DE PRODUCTOS MAS VENDIDOS DEL MES
+    // =======================================================
     $.ajax({
         url: "ajax/dashboard.ajax.php",
         type: "POST",
@@ -386,18 +447,33 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            // console.log("respuesta Productos mas vendidos", respuesta);
-
-            for (let i = 0; i < respuesta.length; i++) {
+            // console.log('Respuesta: ',respuesta[1]["total_venta"])
+           for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
                     '<td>' + respuesta[i]["codigo_producto"] + '</td>' +
                     '<td>' + respuesta[i]["descripcion_producto"] + '</td>' +
-                    '<td align="center">' + formatoMexico2(respuesta[i]["cantidad"]) + '</td>' +
-                    '<td align="right"> S./ ' + formatoMexico2(respuesta[i]["total_venta"]) + '</td>' +
+                    '<td style="text-align: center">' + formatoMexico2(respuesta[i]["cantidad"]) + '</td>' +
+                    '<td style="text-align: right"> S./ ' + formatoMexico2(respuesta[i]["total_venta"]) + '</td>' +
                     '</tr>'
                 // console.log("respuesta Filas", filas);
+                totalTopProducto = totalTopProducto + parseFloat(respuesta[i]["total_venta"])
                 $("#tbl_productos_mas_vendidos tbody").append(filas);
             }
+            // console.log('Respuesta Total Producto: ',totalTopProducto)
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td><Font Color=white>.' +  '</td>' +
+            '</tr>'
+            $("#tbl_productos_mas_vendidos tbody").append(filas);
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +            
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopProducto) + '</td>' +
+            '</tr>'
+            $("#tbl_productos_mas_vendidos tbody").append(filas);            
         }
     });
     // =======================================================
@@ -411,39 +487,73 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            // console.log("respuesta",respuesta);
-
-            for (let i = 0; i < respuesta.length; i++) {
+            // console.log('Respuesta: ',respuesta[1]["TotalComprado"])
+           for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
                     '<td>' + respuesta[i]["codigo_cliente"] + '</td>' +
                     '<td>' + respuesta[i]["nombre_cliente"] + '</td>' +
                     '<td align="right">S./ ' + formatoMexico2(respuesta[i]["contado"]) + '</td>' +
                     '<td align="right">S./ ' + formatoMexico2(respuesta[i]["credito"]) + '</td>' +
                     '</tr>'
+                // console.log("respuesta Filas", filas);
+                totalTopContado = totalTopContado + parseFloat(respuesta[i]["contado"])
+                totalTopCredito = totalTopCredito + parseFloat(respuesta[i]["credito"])
+                totalTopCliente = totalTopCliente + parseFloat(respuesta[i]["TotalComprado"])
                 $("#tbl_clientes_mayor_compra tbody").append(filas);
             }
+            // console.log('Respuesta Total Clientes: ',totalTopCliente)
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopContado) + '</td>' +
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopCredito) + '</td>' +
+            '</tr>'
+            $("#tbl_clientes_mayor_compra tbody").append(filas);
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +            
+            '<td align="right"><Font Color= #17A2B8><strong>' + " " + '</td>' +
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopContado+totalTopCredito) + '</td>' +
+            '</tr>'
+            $("#tbl_clientes_mayor_compra tbody").append(filas);            
+        }
+    });
+    // =======================================================
+    // SOLICITUD RANKING DE ZONAS MAS VENDIDAS
+    // =======================================================      
+    $.ajax({
+        url: "ajax/dashboard.ajax.php",
+        type: "POST",
+        data: {
+            'accion': 4 // listar las zonas con mayor venta del mes
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            // console.log('Respuesta: ',respuesta[1]["TotalVendido"])
+           for (let i = 0; i < respuesta.length; i++) {
+                filas = '<tr>' +
+                    '<td>' + respuesta[i]["Provincia"] + '</td>' +
+                    '<td>' + respuesta[i]["Distrito"] + '</td>' +
+                    '<td align="right">S./ ' + formatoMexico2(respuesta[i]["TotalVendido"]) + '</td>' +
+                    '</tr>'
+                totalTopZonas = totalTopZonas + parseFloat(respuesta[i]["TotalVendido"])
+                $("#tbl_zonas_mas_vendidas tbody").append(filas);
+            }
+            // console.log('Respuesta Total Zonas: ',totalTopZonas)
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +            
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopZonas) + '</td>' +
+            '</tr>'
+            $("#tbl_zonas_mas_vendidas tbody").append(filas);
+            // console.log("respuesta Filas", filas);
         }
     });
 </script>
 
 <script>
-    const formatoMexico1 = (number) => {
-        const exp = /(\d)(?=(\d{3})+(?!\d))/g;
-        const rep = '$1,';
-        let arr = number.toString().split('.');
-        arr[0] = arr[0].replace(exp, rep);
-        return arr[1] ? arr.join('.') : arr[0];
-    }
-
     const formatoMexico2 = (number) => {
         return Intl.NumberFormat("es-MX", {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-        }).format(number)
-    }
-
-    const formatoMexico3 = (number) => {
-        return 'S/ ' + Intl.NumberFormat("es-MX", {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0
         }).format(number)

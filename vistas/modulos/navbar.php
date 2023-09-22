@@ -1,4 +1,5 @@
 <!-- Navbar -->
+<font size="2">
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -12,7 +13,7 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/productos.php','content-wrapper')">
-                Inventario
+                Productos
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
@@ -46,4 +47,5 @@
             </a>
         </li>
 </nav>
+</font>
 <!-- /.navbar -->
