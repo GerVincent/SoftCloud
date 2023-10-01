@@ -625,6 +625,7 @@
             datos.append("accion",accion);
             datos.append("PROD_Cod",data[1]);
             // alert("entro editar ");            
+            // console.log(datos);
 
             $.ajax({
                 url: "ajax/productos.ajax.php",

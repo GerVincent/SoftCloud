@@ -25,6 +25,10 @@ class AjaxDashboard{
         $zonasMasVendidas = DashboardControlador::ctrZonasMasVendidas();
         echo json_encode($zonasMasVendidas);
     }
+    public function getVendedorMasVentas(){
+        $VendedorMasVentas = DashboardControlador::ctrVendedorMasVentas();
+        echo json_encode($VendedorMasVentas);
+    }    
 }
 
 if(isset($_POST['accion']) && $_POST['accion'] == 1){ //Ejecutar function ventas del mes (Grafico de Barras)
@@ -42,6 +46,9 @@ if(isset($_POST['accion']) && $_POST['accion'] == 1){ //Ejecutar function ventas
 }else if(isset($_POST['accion']) && $_POST['accion'] == 4){ //Ejecutar function de zonas con mayor ventas
     $zonasMasVendidas = new AjaxDashboard();
     $zonasMasVendidas -> getZonasMasVendidas();
+}else if(isset($_POST['accion']) && $_POST['accion'] == 5){ //Ejecutar function de zonas con mayor ventas
+    $VendedorMasVentas = new AjaxDashboard();
+    $VendedorMasVentas -> getVendedorMasVentas();    
 }else{
     $datos = new AjaxDashboard();
     $datos -> getDatosDashboard();

@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/configuracion.php','content-wrapper')">
+                    <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/consulta.php','content-wrapper')">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Configuración

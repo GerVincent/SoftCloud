@@ -1,92 +1,76 @@
 <?php
 
-require_once "../controladores/productos.controlador.php";
-require_once "../modelos/productos.modelo.php";
+require_once "../controladores/comboskits.controlador.php";
+require_once "../modelos/comboskits.modelo.php";
 
 // require_once "../vendor/autoload.php";
 
-class ajaxProductos
+class ajaxComboKit
 {
-    public $fileProductos;
     public $PROD_Cod, $CLASE_Cod, $MAR_Cod, $FAM_Cod, $CLAP_Cod, $SEC_Cod, $LNA_Cod, $GRU_Cod, $ENV_Cod, $PROD_Dsc, $PROD_F_1, $PROD_F_2, $PROD_Peso, $PROD_VComision;
 
-    public function ajaxCargaMasivaProductos()
+    public function ajaxListarComboKit()
     {
-        $respuesta = ProductosControlador::ctrCargaMasivaProductos($this->fileProductos);
-        echo json_encode($respuesta);
+        $combokit = ComboKitControlador::ctrListarComboKit();
+        echo json_encode($combokit);
     }
 
-    public function ajaxListarProductos()
+    public function ajaxRegistrarComboKit($data)
     {
-        $productos = ProductosControlador::ctrListarProductos();
-        echo json_encode($productos);
-    }
-
-    public function ajaxRegistrarProducto()
-    {
-        $productos = ProductosControlador::ctrRegistrarProducto($this->PROD_Cod,$this->CLASE_Cod,$this->MAR_Cod,$this->FAM_Cod,
-        $this->CLAP_Cod,$this->SEC_Cod,$this->LNA_Cod,$this->GRU_Cod,$this->ENV_Cod,
-        $this->PROD_Dsc,$this->PROD_F_1,$this->PROD_F_2,$this->PROD_Peso,$this->PROD_VComision);
+        $productos = ComboKitControlador::ctrRegistrarComboKit($data);
 
         echo json_encode($productos);
     }
 
-    public function ajaxEditarProducto()
+    public function ajaxEditarComboKit()
     {
-        $productos = ProductosControlador::ctrEditarProducto($this->PROD_Cod);
+        $productos = ComboKitControlador::ctrEditarComboKit();
         echo json_encode($productos);
     }
 
-    public function ajaxActualizarProducto($data)
+    public function ajaxActualizarComboKit($data)
     {
         $table = "Producto";
         $id = $_POST["PROD_Cod"];
         $nameId = "PROD_Cod";
 
-        $respuesta = ProductosControlador::ctrActualizarProducto($table, $data, $id, $nameId, $this->MAR_Cod, $this->FAM_Cod, $this->SEC_Cod, $this->LNA_Cod, $this->GRU_Cod);
+        $respuesta = ComboKitControlador::ctrActualizarComboKit($table, $data, $id, $nameId, $this->MAR_Cod, $this->FAM_Cod, $this->SEC_Cod, $this->LNA_Cod, $this->GRU_Cod);
         echo json_encode($respuesta);
     }
 
-    public function ajaxEliminarProducto()
+    public function ajaxEliminarComboKit()
     {
         $table = "Producto";
         $id = $_POST["PROD_Cod"];
         $nameId = "PROD_Cod";
 
-        $respuesta = ProductosControlador::ctrEliminarProducto($table, $id, $nameId);
+        $respuesta = ComboKitControlador::ctrEliminarComboKit($table, $id, $nameId);
         echo json_encode($respuesta);
     }
 }
 
 if (isset($_POST['accion']) && $_POST['accion'] == 1) {  // Parametro para listar productos
-    $productos = new ajaxProductos();
-    $productos->ajaxListarProductos();
+    $combokit = new ajaxComboKit();
+    $combokit->ajaxListarComboKit();
 
-} else if (isset($_POST['accion']) && $_POST['accion'] == 2) { // Parametro para registrar productos
-    $RegistrarProducto = new ajaxProductos();
-    $RegistrarProducto -> PROD_Cod = $_POST["PROD_Cod"];
-    $RegistrarProducto -> CLASE_Cod = $_POST["CLASE_Cod"];
-    $RegistrarProducto -> MAR_Cod = $_POST["MAR_Cod"];
-    $RegistrarProducto -> FAM_Cod = $_POST["FAM_Cod"];
-    $RegistrarProducto -> CLAP_Cod = $_POST["CLAP_Cod"];
-    $RegistrarProducto -> SEC_Cod = $_POST["SEC_Cod"];
-    $RegistrarProducto -> LNA_Cod = $_POST["LNA_Cod"];
-    $RegistrarProducto -> GRU_Cod = $_POST["GRU_Cod"];
-    $RegistrarProducto -> ENV_Cod = $_POST["ENV_Cod"];
-    $RegistrarProducto -> PROD_Dsc = $_POST["PROD_Dsc"];
-    $RegistrarProducto -> PROD_F_1 = $_POST["PROD_F_1"];
-    $RegistrarProducto -> PROD_F_2 = $_POST["PROD_F_2"];
-    $RegistrarProducto -> PROD_Peso = $_POST["PROD_Peso"];
-    $RegistrarProducto -> PROD_VComision = $_POST["PROD_VComision"];
-    $RegistrarProducto -> ajaxRegistrarProducto();
+} else if (isset($_POST['accion']) && $_POST['accion'] == 2 // Parametro para registrar productos
+  && isset($_POST['nro_componentes']) && $_POST['nro_componentes'] > 0) {
 
-} else if (isset($_POST['accion']) && $_POST['accion'] == 3) { // Parametro para editar productos
-    $EditarProducto = new ajaxProductos();
-    $EditarProducto -> PROD_Cod = $_POST["PROD_Cod"];
-    $EditarProducto -> ajaxEditarProducto();
+    $RegistrarProducto = new ajaxComboKit();
+    $data = [];
+    for ($index = 1; $index <= $_POST['nro_componentes']; $index++) {
+        array_push($data,$_POST["PROD_Item".$index]);
+        array_push($data,$_POST["PROD_CodHijo".$index]);
+        array_push($data,$_POST["PROD_CantidadHijo".$index]);
+    };
+    $RegistrarProducto -> ajaxRegistrarComboKit($data);
+
+} else if (isset($_POST['accion']) && $_POST['accion'] == 3) { // Parametro para seleccionar codigo padre
+    $EditarProducto = new ajaxComboKit();
+    $EditarProducto -> ajaxEditarComboKit();
 
 } else if (isset($_POST['accion']) && $_POST['accion'] == 4) { // Parametro para actualizar producto
-    $actualizarProducto = new ajaxProductos();
+    $actualizarProducto = new ajaxComboKit();
     $actualizarProducto -> MAR_Cod = $_POST["MAR_Cod"];
     $actualizarProducto -> FAM_Cod = $_POST["FAM_Cod"];
     $actualizarProducto -> SEC_Cod = $_POST["SEC_Cod"];
@@ -108,14 +92,14 @@ if (isset($_POST['accion']) && $_POST['accion'] == 1) {  // Parametro para lista
         "PROD_Peso" => $_POST["PROD_Peso"],
         "PROD_VComision" => $_POST["PROD_VComision"]
     );
-    $actualizarProducto -> ajaxActualizarProducto($data);
+    $actualizarProducto -> ajaxActualizarComboKit($data);
 
 } else if (isset($_POST['accion']) && $_POST['accion'] == 5) { // Parametro para eliminar producto
-    $eliminarProducto = new ajaxProductos();
-    $eliminarProducto -> ajaxEliminarProducto();
+    $eliminarProducto = new ajaxComboKit();
+    $eliminarProducto -> ajaxEliminarComboKit();
 
-} else if (isset($_FILES)) {
-    $archivo_productos = new ajaxProductos();
-    $archivo_productos->fileProductos = $_FILES['fileProductos'];
-    $archivo_productos->ajaxCargaMasivaProductos();
+} else {
+    $EditarProducto = new ajaxComboKit();
+    $EditarProducto -> ajaxEditarComboKit();    
+
 }

@@ -118,4 +118,10 @@ if (isset($_POST['accion']) && $_POST['accion'] == 1) {  // Parametro para lista
     $archivo_productos = new ajaxProductos();
     $archivo_productos->fileProductos = $_FILES['fileProductos'];
     $archivo_productos->ajaxCargaMasivaProductos();
-}
+
+} 
+// else {
+// 
+    // $productos = new ajaxProductos();
+    // $productos->ajaxListarProductos();
+// }

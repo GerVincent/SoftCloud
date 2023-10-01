@@ -164,7 +164,7 @@
                                             <th>Cod.</th>
                                             <th>Nombre Producto</th>
                                             <th style="text-align:center">Cantidad</th>
-                                            <th style="text-align: right">Tot. Venta</th>
+                                            <th style="text-align:right">Tot. Venta</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -192,7 +192,7 @@
                         </div> <!-- ./ end card-tools -->
                     </div> <!-- ./ end card-header -->
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="font-size:20px">
                             <font size="2">
                                 <table style="width:100%" border="1" class="table" id="tbl_clientes_mayor_compra">
                                     <thead>
@@ -249,40 +249,41 @@
             </div>
 
             <!-- COLUMNA RANKING VENDEDORES -->
-            <!-- <div class="col-lg-6"> -->
-                <!-- <div class="card card-info"> -->
-                    <!-- <div class="card-header"> -->
-                        <!-- <h5 class="card-title">Los 10 Vendedores con mayor venta del mes</h5> -->
-                        <!-- <div class="card-tools"> -->
-                            <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"> -->
-                                <!-- <i class="fas fa-minus"></i> -->
-                            <!-- </button> -->
-                            <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"> -->
-                                <!-- <i class="fas fa-times"></i> -->
-                            <!-- </button> -->
-                        <!-- </div> ./ end card-tools -->
-                    <!-- </div> ./ end card-header -->
-                    <!-- <div class="card-body"> -->
-                        <!-- <div class="table-responsive"> -->
-                            <!-- <font size="2"> -->
-                                <!-- <table class="table" id="tbl_clientes_mayor_compra"> -->
-                                    <!-- <thead> -->
-                                        <!-- <tr class="text-danger"> -->
-                                            <!-- <th>Cod.</th> -->
-                                            <!-- <th>Cliente</th> -->
-                                            <!-- <th>Tot. Contado</th> -->
-                                            <!-- <th>Tot. Crédito</th> -->
-                                        <!-- </tr> -->
-                                    <!-- </thead> -->
-                                    <!-- <tbody></tbody> -->
-                                <!-- </table> -->
-                        <!-- </div> -->
-                        <!-- </font> -->
-                    <!-- </div> ./ end card-body -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div>         -->
+            <div class="col-lg-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h5 class="card-title">Los 10 vendedores con mayor venta del mes</h5>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive" style="font-size:20px">
+                            <font size="2">
+                                <table style="width:100%" border="1" class="table" id="tbl_vendedores_mas_ventas">
+                                    <thead>
+                                        <tr class="text-danger">
+                                            <th>Cod.</th>
+                                            <th>Vendedor</th>
+                                            <th>Marca</th>                                            
+                                            <th style="text-align: right">Tot. Contado</th>
+                                            <th style="text-align: right">Tot. Crédito</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                        </div>
+                        </font>
+                    </div> <!-- ./ end card-body -->
+                </div>
+            </div>
 
+        </div>        
     </div><!-- /.container-fluid -->
 </div> <!-- /.content -->
 
@@ -293,10 +294,13 @@
 
     var totalTopProducto = 0;
     var totalTopCliente = 0;
-    var totalTopZonas = 0;
     var totalTopContado = 0;
     var totalTopCredito = 0;
-
+    var totalTopZonas = 0;
+    var totalTopVendedor = 0;
+    var totalTopVendedorContado = 0;
+    var totalTopVendedorCredito = 0;    
+    
     $(document).ready(function() {
         $.ajax({
             url: "ajax/dashboard.ajax.php",
@@ -363,9 +367,9 @@
             total_venta.push(0);
 
            $("#title-header").html('Ventas del Mes: S./  ' + formatoMexico2(total_ventas_mes));
-           $("#title-headercontado").html('________________Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));           
-           $("#title-headercontado").html('________________Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));
-           $("#title-headercredito").html('________________Ventas Credito: S./  ' + formatoMexico2(total_ventas_credito));
+           $("#title-headercontado").html('_ _ Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));           
+           $("#title-headercontado").html('_ _ Ventas Contado: S./  ' + formatoMexico2(total_ventas_contado));
+           $("#title-headercredito").html('_ _ Ventas Credito: S./  ' + formatoMexico2(total_ventas_credito));
 
             var barChartCanvas = $("#barChart").get(0).getContext('2d');
             var areaChartData = {
@@ -487,7 +491,7 @@
         },
         dataType: 'json',
         success: function(respuesta) {
-            // console.log('Respuesta: ',respuesta[1]["TotalComprado"])
+            // console.log('Respuesta: ',respuesta[1]["nombre_cliente"])
            for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
                     '<td>' + respuesta[i]["codigo_cliente"] + '</td>' +
@@ -542,10 +546,63 @@
             // console.log('Respuesta Total Zonas: ',totalTopZonas)
             filas = '<tr>' +
             '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td><Font Color=white>.' +  '</td>' +
+            '</tr>'
+            $("#tbl_zonas_mas_vendidas tbody").append(filas);            
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
             '<td>' + " " + '</td>' +            
             '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopZonas) + '</td>' +
             '</tr>'
             $("#tbl_zonas_mas_vendidas tbody").append(filas);
+            // console.log("respuesta Filas", filas);
+        }
+    });
+    // =======================================================
+    // SOLICITUD RANKING VENDEDORES CON MAS VENDIDAS
+    // =======================================================      
+    $.ajax({
+        url: "ajax/dashboard.ajax.php",
+        type: "POST",
+        data: {
+            'accion': 5 // listar las zonas con mayor venta del mes
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            // console.log('Respuesta: ',respuesta[1]["TotalVendido"])
+            for (let i = 0; i < respuesta.length; i++) {
+                filas = '<tr>' +
+                    '<td>' + respuesta[i]["codigo_vendedor"] + '</td>' +
+                    '<td>' + respuesta[i]["nombre_vendedor"] + '</td>' +
+                    '<td>' + respuesta[i]["marca"] + '</td>' +                    
+                    '<td align="right">S./ ' + formatoMexico2(respuesta[i]["contado"]) + '</td>' +
+                    '<td align="right">S./ ' + formatoMexico2(respuesta[i]["credito"]) + '</td>' +
+                    '</tr>'
+                // console.log("respuesta Filas", filas);
+                totalTopVendedorContado = totalTopVendedorContado + parseFloat(respuesta[i]["contado"])
+                totalTopVendedorCredito = totalTopVendedorCredito + parseFloat(respuesta[i]["credito"])
+                totalTopVendedor = totalTopVendedor + parseFloat(respuesta[i]["TotalVendido"])
+                $("#tbl_vendedores_mas_ventas tbody").append(filas);
+            }
+            // console.log('Respuesta Total Vendedores: ',totalTopVendedor)
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +            
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopVendedorContado) + '</td>' +
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopVendedorCredito) + '</td>' +
+            '</tr>'
+            $("#tbl_vendedores_mas_ventas tbody").append(filas);
+            filas = '<tr>' +
+            '<td>' + " " + '</td>' +
+            '<td>' + " " + '</td>' +            
+            '<td>' + " " + '</td>' +            
+            '<td align="right"><Font Color= #17A2B8><strong>' + " " + '</td>' +
+            '<td align="right"><Font Color= #17A2B8><strong>TOTAL S./ ' + formatoMexico2(totalTopVendedorContado+totalTopVendedorCredito) + '</td>' +
+            '</tr>'
+            $("#tbl_vendedores_mas_ventas tbody").append(filas);
             // console.log("respuesta Filas", filas);
         }
     });

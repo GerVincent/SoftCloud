@@ -22,4 +22,8 @@ class DashboardControlador{
         $zonasMasVendidas = DashboardModelo::mdlZonasMasVendidas();
         return $zonasMasVendidas;
     }
+    static public function ctrVendedorMasVentas(){
+        $VendedorMasVentas = DashboardModelo::mdlVendedorMasVentas();
+        return $VendedorMasVentas;        
+    }
 }

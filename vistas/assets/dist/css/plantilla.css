@@ -10,9 +10,12 @@
     font-weight: bold !important;
     font-size: 11px  !important    
 }
-.text-danger{
-    color:  #17A2B8 !important;    
+.main-footer {
+    margin-left: 250px !important;
 }
+/* .text-danger{ */
+    /* color:  #17A2B8 !important;     */
+/* } */
 table.dataTable tbody td {
     white-space: nowrap !important;
     font-size: 11px  !important
@@ -30,6 +33,10 @@ table.dataTable tbody td {
     white-space: nowrap !important;
 }
 #tbl_productos thead th{
+    white-space: nowrap !important;
+    font-size: 11px  !important    
+}
+#tbl_combo_kit thead th{
     white-space: nowrap !important;
     font-size: 11px  !important    
 }

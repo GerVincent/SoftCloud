@@ -17,13 +17,13 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/carga_masiva_productos.php','content-wrapper')">
-                Carga Masiva
+            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/comboskits.php','content-wrapper')">
+                Combos Kits
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/categorias.php','content-wrapper')">
-                Categorías
+            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/precios.php','content-wrapper')">
+                Precios
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-             <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/configuracion.php','content-wrapper')">
+             <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/consulta.php','content-wrapper')">
                 Configuración
             </a>
         </li>

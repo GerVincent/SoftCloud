@@ -40,4 +40,10 @@ class DashboardModelo
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    static public function mdlVendedorMasVentas()
+    {
+        $stmt = Conexion::conectar()->prepare('EXEC prc_ListarVendedorMasVentas');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }    
 }
