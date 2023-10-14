@@ -109,7 +109,6 @@
                     <!-- ELEMENTOS DE FORMULARIO MODAL -->
                     <div class="row">
 
-                    <!-- Columna Tipo de Cliente -->
                         <div class="col-lg-8">
                         <div class="form-group mb-2">
                             <label class=""><i class="fas fa-barcode fs-6"></i>
@@ -133,7 +132,6 @@
                         </div>
                         </div>
                         <div class="col-lg-4">
-                    <!-- Columna para ingresar Cantidad Item 1 -->
                         <div class="form-group mb-2">
                             <label class=""><i class="fas fa-list-ol" ></i> <span class="small">Precio Unitario
                             </span><span class="text-danger">*</span></label>

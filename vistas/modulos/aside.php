@@ -63,7 +63,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/precios.php','content-wrapper')">
+                            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/clientes.php','content-wrapper')">
                                 <i class="far fa-circle nav-icon"></i>
                                 Clientes
                             </a>

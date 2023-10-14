@@ -17,8 +17,8 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/comboskits.php','content-wrapper')">
-                Combos Kits
+            <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/clientes.php','content-wrapper')">
+                Clientes
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
